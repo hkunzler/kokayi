@@ -1,0 +1,17 @@
+.individualVideo {
+  display: flex;
+  flex-direction: column;
+}
+
+iframe {
+  height: 30vh;
+  margin-top: 1rem;
+}
+
+.header {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin: 2rem 0;
+  }

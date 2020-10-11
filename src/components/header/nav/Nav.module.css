@@ -1,0 +1,10 @@
+h1{
+  margin-bottom: 1rem;
+}
+a {
+  color: black;
+  padding: .5em;
+}
+.linkText:hover{
+  color: #b71c1c;
+}

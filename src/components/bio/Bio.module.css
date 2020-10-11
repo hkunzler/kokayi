@@ -1,0 +1,13 @@
+.header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin: 2rem 0;
+}
+.bio {
+  margin-bottom: 10rem;
+}
+p {
+  margin-bottom: 1rem;
+}
