@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Drawer,
@@ -6,24 +7,12 @@ import {
   ListItem,
   ListItemText,
 } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
 import { Menu } from "@material-ui/icons";
-import * as React from "react";
-import { useState } from "react";
 
-const useStyles = makeStyles({
-  list: {
-    width: 250,
-  },
-  linkText: {
-    textDecoration: `none`,
-    textTransform: `uppercase`,
-    color: `black`,
-  },
-});
+import sideDrawerStyles from "./sideDrawerStyles.js";
 
 const SideDrawer = ({ navItems }) => {
-  const classes = useStyles();
+  const classes = sideDrawerStyles();
   const [state, setState] = useState({ right: false });
 
   const toggleDrawer = (anchor, open) => (event) => {

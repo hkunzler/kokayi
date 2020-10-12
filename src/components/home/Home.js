@@ -1,82 +1,14 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Card,
-  CardActions,
-  CardActionArea,
-  CardMedia,
-  CardContent,
-  Container,
-  Typography,
-  Divider,
-  Grid,
-} from "@material-ui/core";
-import GridListTileBar from "@material-ui/core/GridListTileBar";
-import { makeStyles } from "@material-ui/core/styles";
-import kokayi from "../../images/kokayi-fist2.png";
-import books from "../../images/books.jpg";
+import { Box, Button, Container, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import styles from "./Home.module.css";
-
-const useStyles = makeStyles({
-  home: {
-    // padding: `2rem 0`,
-    // marginTop: `5rem`,
-  },
-  card: {
-    maxWidth: 345,
-    margin: `2rem`,
-    height: `25rem`,
-  },
-  cardBorder: {
-    borderTop: `5px solid #b71c1c`,
-  },
-  divider: {
-    backgroundColor: `#b71c1c`,
-    marginBottom: `2rem`,
-  },
-  buttons: {
-    minWidth: `50%`,
-  },
-  grid: {
-    maxWidth: `50%`,
-    display: `flex`,
-    justifyContent: `center`,
-  },
-  linkText: {
-    color: `#b71c1c`,
-  },
-  purchaseButton: {
-    background: `#b71c1c`,
-    color: `white`,
-    "&:hover": {
-      backgroundColor: "#871111",
-    },
-  },
-});
-
-const quickLinks = {
-  bio: {
-    name: "Bio",
-    img: "bio.jpg",
-  },
-  videos: {
-    name: "Videos",
-    img: "videos.png",
-  },
-  news: { name: "News", img: "videos.png" },
-  articles: {
-    name: "Articles",
-    img: "articles.jpeg",
-  },
-};
+import homeContent from "./homeContent.js";
+import homeStyles from "./homeStyles.js";
 
 export default function Videos() {
-  const classes = useStyles();
-  const sections = Object.keys(quickLinks).map((section, i) => (
+  const classes = homeStyles();
+  
+  const sections = Object.keys(homeContent).map((section, i) => (
     <Box
       display="flex"
       flexWrap="wrap"
@@ -87,9 +19,9 @@ export default function Videos() {
         <>
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
-              <h2>{quickLinks[section].name}</h2>
+              <h2>{homeContent[section].name}</h2>
               <Link
-                to={`/${quickLinks[section].name.toLowerCase()}`}
+                to={`/${homeContent[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
                 View
@@ -97,23 +29,23 @@ export default function Videos() {
             </Grid>
           </Grid>
           <img
-            className={styles.homeImg}
-            src={require(`../../images/${quickLinks[section].img}`)}
+            className={classes.homeImg}
+            src={require(`../../images/${homeContent[section].img}`)}
             alt=""
           />
         </>
       ) : (
         <>
           <img
-            className={styles.homeImg}
-            src={require(`../../images/${quickLinks[section].img}`)}
+            className={classes.homeImg}
+            src={require(`../../images/${homeContent[section].img}`)}
             alt=""
           />
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
-              <h2>{quickLinks[section].name}</h2>
+              <h2>{homeContent[section].name}</h2>
               <Link
-                to={`/${quickLinks[section].name.toLowerCase()}`}
+                to={`/${homeContent[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
                 View
@@ -126,8 +58,8 @@ export default function Videos() {
   ));
   return (
     <div className={classes.home}>
-      <div className={styles.books}>
-        <div className={styles.test}>
+      <div className={classes.books}>
+        <div className={classes.blackBox}>
           <Link to="/products">
             <Button className={classes.purchaseButton} variant="contained">
               Purchase books
@@ -136,7 +68,7 @@ export default function Videos() {
         </div>
       </div>
       <Container maxWidth="md">
-        <h1 className={styles.header}>Welcome</h1>
+        <h1 className={classes.header}>Welcome</h1>
         <Divider className={classes.divider} variant="middle" />
         {sections}
       </Container>

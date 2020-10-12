@@ -1,5 +1,4 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import { Box, Card, Container, Divider } from "@material-ui/core";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
@@ -8,57 +7,34 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import styles from "./Products.module.css";
-
-const useStyles = makeStyles({
-  card: {
-    maxWidth: 345,
-    margin: `2rem`,
-  },
-  cardBorder: {
-    borderTop: `2px solid #b71c1c`,
-  },
-  background: {
-    background: `#d3d3d375`,
-    padding: `2rem 0`,
-  },
-  divider: {
-    backgroundColor: `#b71c1c`,
-  },
-});
-
-const articles = {
-  voices: {
-    author: "by Wesley Early",
-    img: "voices.jpg",
-    title: "49 Voices: Kokayi Nosakhere of Anchorage",
-    url:
-      "https://www.alaskapublic.org/2017/02/24/49-voices-kokayi-nosakhere-of-anchorage/",
-  },
-};
+import productsContent from "./productsContent.js";
+import productsStyles from "./productsStyles";
 
 export default function Products() {
-  const classes = useStyles();
-  const articleCards = Object.keys(articles).map((article) => (
+  const classes = productsStyles();
+  const productCards = Object.keys(productsContent).map((product) => (
     <Card className={classes.card}>
       <CardActionArea
         rel="noopener noreferrer"
         target="_blank"
-        href={articles[article].url}
+        href="https://www.paypal.com/paypalme/KokayiNosakhere"
       >
         <CardMedia
           component="img"
-          alt={articles[article].title}
+          alt={productsContent[product].title}
           height="140"
-          src={require(`../../images/${articles[article].img}`)}
-          title={articles[article].title}
+          src={require(`../../images/${productsContent[product].img}`)}
+          title={productsContent[product].title}
         />
         <CardContent className={classes.cardBorder}>
           <Typography gutterBottom variant="h5" component="h2">
-            {articles[article].title}
+            {productsContent[product].title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {articles[article].author}
+            by Kokayi Nosakhere
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            {productsContent[product].price}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -70,17 +46,24 @@ export default function Products() {
           size="small"
           color="primary"
         >
-          Read
+          Purchase
         </Button>
       </CardActions>
     </Card>
   ));
   return (
     <Container maxWidth="md">
-      <h1 className={styles.header}>Products</h1>
+      <h1 className={classes.header}>Products</h1>
       <Divider className={classes.divider} variant="middle" />
+      <center>
+        <i>
+          When 'Purchase' is selected you will be redirected to PayPal. To
+          continue with purchase please add a comment for what you'd like to
+          purchase and enter the listed price.
+        </i>
+      </center>
       <Box display="flex" flexWrap="wrap" justifyContent="center">
-        {articleCards}
+        {productCards}
       </Box>
     </Container>
   );
