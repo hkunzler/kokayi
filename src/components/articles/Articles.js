@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Box, Card, Container } from "@material-ui/core";
+import { Box, Card, Container, Divider } from "@material-ui/core";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -16,15 +16,41 @@ const useStyles = makeStyles({
     margin: `2rem`,
   },
   cardBorder: {
-    borderTop: `5px solid #b71c1c`,
+    borderTop: `2px solid #b71c1c`,
   },
   background: {
-    background: `#FAFAFA`,
     padding: `2rem 0`,
+  },
+  divider: {
+    backgroundColor: `#b71c1c`,
   },
 });
 
 const articles = {
+  rosaParks: {
+    img: "rosa-parks.jpeg",
+    title: "Rosa Parks and Donald Trump: Real News vs Fake News",
+    url:
+      "https://medium.com/@Royalstar907/rosa-parks-and-donald-trump-real-news-vs-fake-news-d63be24002b7",
+  },
+  actsOfSafety: {
+    img: "acts-of-safety.jpeg",
+    title: "Acts of Safety or Interrupting Whiteness on Southern Oregon University",
+    url:
+      "https://medium.com/@Royalstar907/acts-of-safety-or-interrupting-whiteness-on-southern-oregon-university-9d0d24e176ce",
+  },
+  ahmaudArbrey: {
+    img: "ahmaud-arbrey.jpeg",
+    title: "Grieving Ahmaud Arbrey: How White Allies Can Provide Comfort",
+    url:
+      "https://medium.com/@Royalstar907/grieving-ahmaud-arbrey-how-white-allies-can-provide-comfort-d41ca943579c",
+  },
+  southernOregon: {
+    img: "southern-oregon.jpeg",
+    title: "Facing the Reality of Southern Oregon",
+    url:
+      "https://medium.com/@Royalstar907/facing-the-reality-of-southern-oregon-a25a67983df8",
+  },
   foodStamps: {
     img: "food-stamp.jpg",
     title: "On Food Stamps and Alaska's Senators",
@@ -75,7 +101,7 @@ export default function Articles() {
   const classes = useStyles();
   const articleCards = Object.keys(articles).map((article) => (
     <Card className={classes.card}>
-      <CardActionArea href={articles[article].url}>
+      <CardActionArea rel="noopener noreferrer" target="_blank" href={articles[article].url}>
         <CardMedia
           component="img"
           alt={articles[article].title}
@@ -93,7 +119,7 @@ export default function Articles() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button href={articles[article].url} size="small" color="primary">
+        <Button rel="noopener noreferrer" target="_blank" href={articles[article].url} size="small" color="primary">
           Read
         </Button>
       </CardActions>
@@ -103,6 +129,7 @@ export default function Articles() {
     <div className={classes.background}>
       <Container maxWidth="md">
         <h1 className={styles.header}>Articles</h1>
+        <Divider className={classes.divider} variant="middle" />
         <Box display="flex" flexWrap="wrap" justifyContent="center">
           {articleCards}
         </Box>

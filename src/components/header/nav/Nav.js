@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
+
 import {
   AppBar,
   Toolbar,
@@ -15,12 +17,13 @@ import SideDrawer from "../sideDrawer/SideDrawer.js";
 import HideOnScroll from "../hideOnScroll/HideOnScroll.js";
 import BackToTop from "../backToTop/BackToTop.js";
 import styles from "./Nav.module.css";
+import classes from "./Nav.module.css";
 
 const useStyles = makeStyles({
   gridMedia: {
     display: `grid`,
     gridTemplateColumns: `auto`,
-    margin: `1rem 0`
+    margin: `1rem 0`,
   },
   navbar: {
     background: `white`,
@@ -43,10 +46,17 @@ const useStyles = makeStyles({
   backToTop: {
     background: `#b71c1c`,
     color: `white`,
+    "&:hover": {
+      backgroundColor: "#871111",
+    },
+  },
+  socialMediaLinks: {
+    padding: `.5rem`,
+    lineHeight: `1.5rem`,
   },
 });
 
-const navItems = ["Home", "Bio", "Video", "News", "Articles"];
+const navItems = ["Home", "Bio", "Videos", "News", "Articles", "Products"];
 
 const socialMedia = {
   facebook: "https://www.facebook.com/Kokayi137",
@@ -55,15 +65,17 @@ const socialMedia = {
   medium: "https://www.linkedin.com/in/kokayi-nosakhere-8a5a877/",
 };
 
-const socialMediaLinks = Object.keys(socialMedia).map((media) => (
-  <a target="_blank" href={socialMedia[media]}>
-    <i class={`fab fa-${media.toLowerCase()}`}></i>
-  </a>
-));
-
 export default function Nav() {
   const classes = useStyles();
-
+  const socialMediaLinks = Object.keys(socialMedia).map((media) => (
+    <a
+      className={classes.socialMediaLinks}
+      target="_blank"
+      href={socialMedia[media]}
+    >
+      <i class={`fab fa-${media.toLowerCase()}`}></i>
+    </a>
+  ));
   return (
     <>
       <HideOnScroll>
@@ -71,7 +83,9 @@ export default function Nav() {
           <Toolbar>
             <Container maxWidth="xl" className={classes.navbarDisplayFlex}>
               <div className={classes.gridMedia}>
-                <h2>Kokayi Nosakhere</h2>
+                <Link to="/home">
+                  <h2>Kokayi Nosakhere</h2>
+                </Link>
                 <div className="icons">{socialMediaLinks}</div>
               </div>
               <Hidden smDown>
@@ -81,15 +95,15 @@ export default function Nav() {
                   className={classes.navListDisplayFlex}
                 >
                   {navItems.map((item) => (
-                    <a
-                      href={`/${item.toLowerCase()}`}
+                    <Link
+                      to={`/${item.toLowerCase()}`}
                       key={item}
                       className={classes.linkText}
                     >
                       <ListItem className={styles.linkText} button>
                         <ListItemText primary={item} />
                       </ListItem>
-                    </a>
+                    </Link>
                   ))}
                 </List>
               </Hidden>
@@ -102,7 +116,11 @@ export default function Nav() {
       </HideOnScroll>
       <Toolbar id="back-to-top-anchor" />
       <BackToTop>
-        <Fab className={classes.backToTop} size="large" aria-label="scroll back to top">
+        <Fab
+          className={classes.backToTop}
+          size="large"
+          aria-label="scroll back to top"
+        >
           <KeyboardArrowUp />
         </Fab>
       </BackToTop>

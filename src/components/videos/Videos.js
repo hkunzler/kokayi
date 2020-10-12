@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container } from "@material-ui/core";
+import { Box, Container, Divider } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
 import styles from "./Video.module.css";
@@ -10,9 +10,11 @@ const useStyles = makeStyles({
     margin: `2rem`,
   },
   background: {
-      background: `#FAFAFA`,
       padding: `2rem 0`,
-  }
+  },
+  divider: {
+    backgroundColor: `#b71c1c`,
+}
 });
 
 const videoUrls = [
@@ -28,6 +30,7 @@ export default function Videos() {
     <div className={classes.background}>
       <Container maxWidth="md">
         <h1 className={styles.header}>Videos</h1>
+        <Divider className={classes.divider} variant="middle" />
         <Box display="flex" flexWrap="wrap" justifyContent="center">
           {videoUrls.map((videoUrl) => (
             <iframe

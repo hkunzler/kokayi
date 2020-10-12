@@ -8,7 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import styles from "./News.module.css";
+import styles from "./Products.module.css";
 
 const useStyles = makeStyles({
   card: {
@@ -35,34 +35,17 @@ const articles = {
     url:
       "https://www.alaskapublic.org/2017/02/24/49-voices-kokayi-nosakhere-of-anchorage/",
   },
-  fbi: {
-    author: "",
-    img: "fbi.jpg",
-    title: "2017 Director’s Community Leadership Award Recipient",
-    url:
-      "https://www.fbi.gov/about/community-outreach/dcla/2017/anchorage-kokayi-nosakhere",
-  },
-  diverse: {
-    author: "by Wesley Early",
-    img: "diverse.jpg",
-    title: "Is Anchorage America’s most diverse city? Depends on who you",
-    url:
-      "https://www.alaskapublic.org/2017/05/30/is-anchorage-americas-most-diverse-city-depends-on-who-you-ask/",
-  },
-  ashland: {
-    author: "by Jennevieve Fong",
-    img: "ashland.jpg",
-    title: "Ashland community kindness project gains national attention",
-    url:
-      "https://ktvl.com/news/local/ashland-community-kindness-project-gains-national-attention",
-  },
 };
 
-export default function News() {
+export default function Products() {
   const classes = useStyles();
   const articleCards = Object.keys(articles).map((article) => (
     <Card className={classes.card}>
-      <CardActionArea rel="noopener noreferrer" target="_blank" href={articles[article].url}>
+      <CardActionArea
+        rel="noopener noreferrer"
+        target="_blank"
+        href={articles[article].url}
+      >
         <CardMedia
           component="img"
           alt={articles[article].title}
@@ -80,7 +63,13 @@ export default function News() {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button rel="noopener noreferrer" target="_blank" href={articles[article].url} size="small" color="primary">
+        <Button
+          rel="noopener noreferrer"
+          target="_blank"
+          href="https://www.paypal.com/paypalme/KokayiNosakhere"
+          size="small"
+          color="primary"
+        >
           Read
         </Button>
       </CardActions>
@@ -88,7 +77,7 @@ export default function News() {
   ));
   return (
     <Container maxWidth="md">
-      <h1 className={styles.header}>News</h1>
+      <h1 className={styles.header}>Products</h1>
       <Divider className={classes.divider} variant="middle" />
       <Box display="flex" flexWrap="wrap" justifyContent="center">
         {articleCards}

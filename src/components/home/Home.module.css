@@ -3,6 +3,29 @@
   padding: 1rem 0;
   margin: 2rem 0;
 }
-/* .kokayi {
-  margin-left: 5rem;
-} */
+.books {
+  background-image: url("../../images/books.jpg");
+  height: 50vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.homeImg {
+  max-width: 50%;
+}
+.linkText:hover {
+  color: #b71c1c;
+}
+
+.test {
+  left: 0;
+  right: 0;
+  height: 6rem;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  top: 46vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+}
