@@ -13,7 +13,7 @@ const App = () => (
     <Router>
       <Nav />
       <Switch>
-        <Route exact path="/home">
+        <Route exact path={["/", "/home"]}>
           <Home />
         </Route>
         <Route path="/bio">
