@@ -7,11 +7,29 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import productsContent from "./productsContent.js";
+// import productsContent from "./productsContent.js";
 import productsStyles from "./productsStyles";
 
 export default function Products() {
   const classes = productsStyles();
+  const productsContent = {
+    whenAndWhere: {
+      img: "when-book.jpeg",
+      price: "$12.50",
+      title: "When and Where We Feel Safe",
+    },
+    processingOurCollective: {
+      img: "processing-book.jpg",
+      price: "$14.50",
+      title:
+        "Processing Our Collective Trauma: Police Crimes Against Black Folks",
+    },
+    bundleBooks: {
+      img: "bundle-books.jpg",
+      price: "$25",
+      title: "Bundle Both Books",
+    },
+  };
   const productCards = Object.keys(productsContent).map((product) => (
     <Card className={classes.card}>
       <CardActionArea
