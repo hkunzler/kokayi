@@ -21,6 +21,10 @@ export default function Videos() {
       name: "Articles",
       img: "articles.jpeg",
     },
+    products: {
+      name: "Products",
+      img: "books.jpg",
+    },
   };
   const sections = Object.keys(homeContent).map((section, i) => (
     <Box
@@ -74,7 +78,7 @@ export default function Videos() {
     <div className={classes.home}>
       <div className={classes.books}>
         <div className={classes.blackBox}>
-          <Link to="/products">
+          <Link to="/products" className={classes.purchaseButtonLink}>
             <Button className={classes.purchaseButton} variant="contained">
               Purchase books
             </Button>

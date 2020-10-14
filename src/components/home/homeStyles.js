@@ -51,6 +51,7 @@ const homeStyles = makeStyles({
   },
   linkText: {
     color: "#b71c1c",
+    textDecoration: "none",
   },
   purchaseButton: {
     background: "#b71c1c",
@@ -58,6 +59,9 @@ const homeStyles = makeStyles({
     "&:hover": {
       backgroundColor: "#871111",
     },
+  },
+  purchaseButtonLink: {
+    textDecoration: "none",
   },
 });
 
