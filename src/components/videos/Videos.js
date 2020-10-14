@@ -1,12 +1,18 @@
 import React from "react";
 import { Box, Container, Divider } from "@material-ui/core";
 
-import videosContent from "./videosContent.js";
+// import videosContent from "./videosContent.js";
 import videosStyles from "./videosStyles.js";
 
 export default function Videos() {
   const classes = videosStyles();
-
+  const videosContent = [
+    "https://www.youtube-nocookie.com/embed/KyqNvqw0yKI",
+    "https://www.youtube-nocookie.com/embed/3mGINvxPESo",
+    "https://www.youtube.com/embed/Ce4VZcJ3I6g",
+    "https://www.youtube-nocookie.com/embed/KyqNvqw0yKI",
+  ];
+  
   return (
     <div className={classes.background}>
       <Container maxWidth="md">

@@ -15,11 +15,18 @@ import BackToTop from "../backToTop/BackToTop.js";
 import HideOnScroll from "../hideOnScroll/HideOnScroll.js";
 import SideDrawer from "../sideDrawer/SideDrawer.js";
 
-import { navItems, socialMedia } from "./navContent.js";
+// import { navItems, socialMedia } from "./navContent.js";
 import navStyles from "./navStyles.js";
 
 export default function Nav() {
   const classes = navStyles();
+  const navItems = ["Home", "Bio", "Videos", "News", "Articles", "Products"];
+  const socialMedia = {
+    facebook: "https://www.facebook.com/Kokayi137",
+    twitter: "https://twitter.com/kokayi137",
+    linkedIn: "https://www.linkedin.com/in/kokayi-nosakhere-8a5a877/",
+    medium: "https://www.linkedin.com/in/kokayi-nosakhere-8a5a877/",
+  };
   const socialMediaLinks = Object.keys(socialMedia).map((media) => (
     <a
       className={classes.socialMediaLinks}
