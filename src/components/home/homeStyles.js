@@ -50,7 +50,7 @@ const homeStyles = makeStyles({
     maxWidth: "50%",
   },
   linkText: {
-    color: "#b71c1c",
+    color: "black",
     textDecoration: "none",
   },
   purchaseButton: {

@@ -37,12 +37,11 @@ export default function Videos() {
         <>
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
-              <h2>{homeContent[section].name}</h2>
               <Link
                 to={`/${homeContent[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
-                View
+                <h2>{homeContent[section].name}</h2>
               </Link>
             </Grid>
           </Grid>
@@ -61,12 +60,11 @@ export default function Videos() {
           />
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
-              <h2>{homeContent[section].name}</h2>
               <Link
                 to={`/${homeContent[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
-                View
+                <h2>{homeContent[section].name}</h2>
               </Link>
             </Grid>
           </Grid>
