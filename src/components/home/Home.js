@@ -2,12 +2,26 @@ import React from "react";
 import { Box, Button, Container, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-import homeContent from "./homeContent.js";
+// import homeContent from "./homeContent.js";
 import homeStyles from "./homeStyles.js";
 
 export default function Videos() {
   const classes = homeStyles();
-  
+  const homeContent = {
+    bio: {
+      name: "Bio",
+      img: "bio.jpg",
+    },
+    videos: {
+      name: "Videos",
+      img: "videos.png",
+    },
+    news: { name: "News", img: "fbi.jpg" },
+    articles: {
+      name: "Articles",
+      img: "articles.jpeg",
+    },
+  };
   const sections = Object.keys(homeContent).map((section, i) => (
     <Box
       display="flex"
