@@ -13,6 +13,15 @@ import newsStyles from "./newsStyles";
 export default function News() {
   const classes = newsStyles();
   const newsContent = {
+    kokayiMarch: {
+      author:
+        "Dennis Wagner, Jordan Culver, and Deborah Barfield Berry, USA TODAY",
+      img: "kokayi-march.webp",
+      title:
+        "25 years ago, Black men united in their pain – and power. This is what the Million Man March meant to participants.",
+      url:
+        "https://www.usatoday.com/in-depth/news/nation/2020/10/14/million-man-march-25th-anniversary-participants-reflect/5909719002/?fbclid=IwAR1TbnmLBuE1GxUe-Z4ZkTESDP2n4VZe6JiePJDChuX1J2z9Pc4egnTEDeg",
+    },
     voices: {
       author: "by Wesley Early",
       img: "voices.jpg",
