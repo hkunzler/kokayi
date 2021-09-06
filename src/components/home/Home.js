@@ -2,31 +2,13 @@ import React from "react";
 import { Box, Button, Container, Divider, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
-// import homeContent from "./homeContent.js";
+import {homeContent} from "./homeContent.js";
 import homeStyles from "./homeStyles.js";
 
 export default function Videos() {
   const classes = homeStyles();
-  const homeContent = {
-    bio: {
-      name: "Bio",
-      img: "bio.jpg",
-    },
-    videos: {
-      name: "Videos",
-      img: "videos.png",
-    },
-    news: { name: "News", img: "fbi.jpg" },
-    articles: {
-      name: "Articles",
-      img: "articles.jpeg",
-    },
-    products: {
-      name: "Products",
-      img: "books.jpg",
-    },
-  };
-  const sections = Object.keys(homeContent).map((section, i) => (
+  const home = homeContent();
+  const sections = Object.keys(home).map((section, i) => (
     <Box
       display="flex"
       flexWrap="wrap"
@@ -38,16 +20,16 @@ export default function Videos() {
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
               <Link
-                to={`/${homeContent[section].name.toLowerCase()}`}
+                to={`/${home[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
-                <h2>{homeContent[section].name}</h2>
+                <h2>{home[section].name}</h2>
               </Link>
             </Grid>
           </Grid>
           <img
             className={classes.homeImg}
-            src={require(`../../images/${homeContent[section].img}`)}
+            src={require(`../../images/${home[section].img}`)}
             alt=""
           />
         </>
@@ -55,16 +37,16 @@ export default function Videos() {
         <>
           <img
             className={classes.homeImg}
-            src={require(`../../images/${homeContent[section].img}`)}
+            src={require(`../../images/${home[section].img}`)}
             alt=""
           />
           <Grid container className={classes.grid}>
             <Grid item xs={3}>
               <Link
-                to={`/${homeContent[section].name.toLowerCase()}`}
+                to={`/${home[section].name.toLowerCase()}`}
                 className={classes.linkText}
               >
-                <h2>{homeContent[section].name}</h2>
+                <h2>{home[section].name}</h2>
               </Link>
             </Grid>
           </Grid>

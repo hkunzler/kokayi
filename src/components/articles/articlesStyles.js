@@ -5,8 +5,8 @@ const articlesStyles = makeStyles({
     padding: '2rem 0',
   },
   card: {
-    maxWidth: 345,
     margin: '2rem',
+    maxWidth: 345,
   },
   cardBorder: {
     borderTop: '2px solid #b71c1c',

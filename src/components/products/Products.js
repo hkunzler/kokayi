@@ -1,14 +1,14 @@
 import React from "react";
 import { Box, Card, Container, Divider } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
-import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import {productsContent} from "./productsContent.js";
-import productsStyles from "./productsStyles";
+import { productsContent } from "./productsContent.js";
+import productsStyles from "./productsStyles.js";
 
 export default function Products() {
   const classes = productsStyles();
@@ -58,7 +58,9 @@ export default function Products() {
       <Divider className={classes.divider} variant="middle" />
       <center>
         <i>
-        All individual books are $15 + $5 shipping and handling. Please include your mailing address to receive printed copies. Please allow 1-2 weeks for delivery.
+          All individual books are $15 + $5 shipping and handling. Please
+          include your mailing address to receive printed copies. Please allow
+          1-2 weeks for delivery.
         </i>
       </center>
       <Box display="flex" flexWrap="wrap" justifyContent="center">
