@@ -12,30 +12,30 @@ import productsStyles from "./productsStyles";
 
 export default function Products() {
   const classes = productsStyles();
-  
-  const productCards = Object.keys(productsContent).map((product) => (
+  const products = productsContent();
+  const productCards = Object.keys(products).map((product) => (
     <Card className={classes.card}>
       <CardActionArea
         rel="noopener noreferrer"
         target="_blank"
-        href={productsContent[product].url}
+        href={products[product].url}
       >
         <CardMedia
           component="img"
-          alt={productsContent[product].title}
+          alt={products[product].title}
           height="140"
-          src={require(`../../images/${productsContent[product].img}`)}
-          title={productsContent[product].title}
+          src={require(`../../images/${products[product].img}`)}
+          title={products[product].title}
         />
         <CardContent className={classes.cardBorder}>
           <Typography gutterBottom variant="h5" component="h2">
-            {productsContent[product].title}
+            {products[product].title}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             by Kokayi Nosakhere
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {productsContent[product].price}
+            {products[product].price}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -43,7 +43,7 @@ export default function Products() {
         <Button
           rel="noopener noreferrer"
           target="_blank"
-          href={productsContent[product].url}
+          href={products[product].url}
           size="small"
           color="primary"
         >
