@@ -14,6 +14,7 @@ const productsStyles = makeStyles({
   },
   divider: {
     backgroundColor: "#b71c1c",
+    marginBottom: "1rem",
   },
   header: {
     margin: "2rem 0",

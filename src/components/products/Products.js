@@ -7,35 +7,18 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-// import productsContent from "./productsContent.js";
+import {productsContent} from "./productsContent.js";
 import productsStyles from "./productsStyles";
 
 export default function Products() {
   const classes = productsStyles();
-  const productsContent = {
-    whenAndWhere: {
-      img: "when-book.jpeg",
-      price: "$12.50",
-      title: "When and Where We Feel Safe",
-    },
-    processingOurCollective: {
-      img: "processing-book.jpg",
-      price: "$14.50",
-      title:
-        "Processing Our Collective Trauma: Police Crimes Against Black Folks",
-    },
-    bundleBooks: {
-      img: "bundle-books.jpg",
-      price: "$25",
-      title: "Bundle Both Books",
-    },
-  };
+  
   const productCards = Object.keys(productsContent).map((product) => (
     <Card className={classes.card}>
       <CardActionArea
         rel="noopener noreferrer"
         target="_blank"
-        href="https://www.paypal.com/paypalme/KokayiNosakhere"
+        href={productsContent[product].url}
       >
         <CardMedia
           component="img"
@@ -60,7 +43,7 @@ export default function Products() {
         <Button
           rel="noopener noreferrer"
           target="_blank"
-          href="https://www.paypal.com/paypalme/KokayiNosakhere"
+          href={productsContent[product].url}
           size="small"
           color="primary"
         >
@@ -75,9 +58,7 @@ export default function Products() {
       <Divider className={classes.divider} variant="middle" />
       <center>
         <i>
-          When 'Purchase' is selected you will be redirected to PayPal. To
-          continue with purchase please add a comment for what you'd like to
-          purchase and enter the listed price.
+        All individual books are $15 + $5 shipping and handling. Please include your mailing address to receive printed copies. Please allow 1-2 weeks for delivery.
         </i>
       </center>
       <Box display="flex" flexWrap="wrap" justifyContent="center">
