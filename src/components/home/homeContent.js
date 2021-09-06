@@ -2,16 +2,16 @@ export const homeContent = () => {
   const home = {
     bio: {
       name: "Bio",
-      img: "bio.jpg",
+      img: "bio.webp",
     },
     videos: {
       name: "Videos",
-      img: "videos.png",
+      img: "videos.webp",
     },
-    news: { name: "News", img: "fbi.jpg" },
+    news: { name: "News", img: "fbi.webp" },
     articles: {
       name: "Articles",
-      img: "articles.jpeg",
+      img: "articles.webp",
     },
   };
   return home;

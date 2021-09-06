@@ -1,5 +1,5 @@
 import { makeStyles } from "@material-ui/core/styles";
-import books from "../../images/books.jpg";
+import books from "../../images/books.webp";
 
 const homeStyles = makeStyles({
   blackBox: {

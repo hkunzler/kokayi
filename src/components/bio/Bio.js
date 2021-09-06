@@ -5,7 +5,7 @@ import Typography from "@material-ui/core/Typography";
 import {bioContent} from "./bioContent.js";
 import bioStyles from "./bioStyles.js";
 
-import kokayi from "../../images/kokayi-profile.png";
+import kokayi from "../../images/kokayi-profile.webp";
 
 export default function Bio() {
   const classes = bioStyles();
